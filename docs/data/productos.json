@@ -1,0 +1,470 @@
+[
+  {
+    "id": 1001,
+    "nombre": "Rubor profesional en polvo Lula",
+    "categoria": "Rostro",
+    "descripcion": "Dale un toque de color, frescura y vida a tus mejillas con una textura suave de acabado profesional.",
+    "imagenes": [
+      "img/producto_1785367059077_jx5x.JPG",
+      "img/producto_1785367059132_ba3t.JPG",
+      "img/producto_1785367059185_wd7w.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 1,
+        "tono": "01",
+        "precio": 14000,
+        "stock": 1
+      },
+      {
+        "id": 2,
+        "tono": "04",
+        "precio": 14000,
+        "stock": 1
+      },
+      {
+        "id": 3,
+        "tono": "05",
+        "precio": 14000,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": 1002,
+    "nombre": "Base Velvet Dolce Bella Alta cobertura",
+    "categoria": "Rostro",
+    "descripcion": "Piel impecable y aterciopelada al instante con una cobertura alta que perfecciona tu rostro sin recargarlo.",
+    "imagenes": [
+      "img/producto_1785367076780_bkuz.JPG",
+      "img/producto_1785367076834_sada.JPG",
+      "img/producto_1785367076887_rsx1.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 4,
+        "tono": "03",
+        "precio": 25500,
+        "stock": 1
+      },
+      {
+        "id": 5,
+        "tono": "05",
+        "precio": 25500,
+        "stock": 1
+      },
+      {
+        "id": 6,
+        "tono": "06",
+        "precio": 25500,
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": 1003,
+    "nombre": "Corrector alta cobertura Lula",
+    "categoria": "Rostro",
+    "descripcion": "Despídete de las ojeras e imperfecciones con una fórmula pigmentada que difumina y corrige con fluidez.",
+    "imagenes": [
+      "img/producto_1785367091549_oh6g.JPG",
+      "img/producto_1785367091598_fy7b.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 7,
+        "tono": "04",
+        "precio": 16000,
+        "stock": 1
+      },
+      {
+        "id": 8,
+        "tono": "03",
+        "precio": 16000,
+        "stock": 1
+      },
+      {
+        "id": 9,
+        "tono": "05",
+        "precio": 16000,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Contorno cremoso Hydraboost OG",
+    "precio": 19500,
+    "stock": 1,
+    "categoria": "Rostro",
+    "descripcion": "Esculpe y define tus facciones con la calidez cremosa de una fórmula superhidratante y fácil de difuminar.",
+    "imagenes": [
+      "img/producto_1785364207913.JPG",
+      "img/producto_1785365249223_cb81.JPG",
+      "img/producto_1785365253516_alj1.JPG"
+    ]
+  },
+  {
+    "id": 1004,
+    "nombre": "Pomada para cejas y delineados lula",
+    "categoria": "Ojos",
+    "descripcion": "Diseña cejas perfectas y traza delineados de impacto con la máxima precisión y fijación.",
+    "imagenes": [
+      "img/producto_1785367017130_p0dr.JPG",
+      "img/producto_1785367017195_cpl4.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 11,
+        "tono": "Café",
+        "precio": 12500,
+        "stock": 2
+      },
+      {
+        "id": 12,
+        "tono": "Dark 03",
+        "precio": 12500,
+        "stock": 2
+      },
+      {
+        "id": 13,
+        "tono": "Medium 02",
+        "precio": 12500,
+        "stock": 2
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Jabón Antiedad Hialuronico Bioaqua Caja Azul",
+    "precio": 10000,
+    "stock": 2,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Limpia delicadamente tu rostro mientras lo hidratas y previenes los signos de la edad.",
+    "imagenes": [
+      "img/producto_1785366975996_18ay.JPG",
+      "img/producto_1785366976067_im72.JPG",
+      "img/producto_1785366976152_wua1.JPG"
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "Tónico Antiedad Hialuronico Bioaqua Caja Azul",
+    "precio": 13000,
+    "stock": 2,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Devuélvele la vitalidad y la firmeza a tu piel con un baño de hidratación profunda e intensiva.",
+    "imagenes": [
+      "img/producto_1785366955347_x6nw.JPG",
+      "img/producto_1785366955416_j49x.JPG",
+      "img/producto_1785366955480_c7t6.JPG"
+    ]
+  },
+  {
+    "id": 16,
+    "nombre": "Escudo de maquillaje Elaya",
+    "precio": 15000,
+    "stock": 1,
+    "categoria": "Accesorios",
+    "descripcion": "Tu aliado imprescindible para aplicar sombras y pestañina de forma impecable sin manchar tu piel.",
+    "imagenes": [
+      "img/producto_1785366935927_bd48.JPG",
+      "img/producto_1785366935977_z8wt.JPG",
+      "img/producto_1785366936034_pva9.JPG"
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "Kit profesional de brochas x10 Fluff Montoc",
+    "precio": 56500,
+    "stock": 1,
+    "categoria": "Accesorios",
+    "descripcion": "La colección perfecta de cerdas ultra suaves para lograr acabados profesionales en cada look.",
+    "imagenes": [
+      "img/producto_1785366904904_q3km.JPG",
+      "img/producto_1785366904968_3lpu.JPG",
+      "img/producto_1785366905035_86o4.JPG"
+    ]
+  },
+  {
+    "id": 19,
+    "nombre": "Duo llavero lacito Bloomshell",
+    "categoria": "Labios",
+    "descripcion": "El accesorio más tierno y práctico para lucir unos labios jugosos, hidratados y llenos de color donde vayas.",
+    "imagenes": [
+      "img/producto_1785367113429_zvy9.JPG",
+      "img/producto_1785367113501_5i1t.JPG",
+      "img/producto_1785367113559_4fse.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 1785366882161,
+        "tono": "tint + mini mimosa",
+        "precio": 26500,
+        "stock": 1
+      },
+      {
+        "id": 1785366882256,
+        "tono": "mimosa + mini shell tint",
+        "precio": 26500,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "Gel facial limpiador con ceramidas Lula",
+    "precio": 28500,
+    "stock": 2,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Limpia profundamente respetando la barrera natural de tu piel para dejarla suave, fresca y protegida.",
+    "imagenes": [
+      "img/producto_1785366722952_oxrt.JPG",
+      "img/producto_1785366723009_ehb1.JPG",
+      "img/producto_1785366723083_dcrd.JPG"
+    ]
+  },
+  {
+    "id": 1005,
+    "nombre": "Lapiz delineador de labios Atenea",
+    "categoria": "Labios",
+    "descripcion": "Define el contorno de tus labios con precisión suave y pigmentación de larga duración.",
+    "imagenes": [
+      "img/producto_1785366582334_w3xr.JPG",
+      "img/producto_1785366582397_4pej.JPG",
+      "img/producto_1785366582469_hwgk.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 21,
+        "tono": "Clear wine",
+        "precio": 13000,
+        "stock": 1
+      },
+      {
+        "id": 22,
+        "tono": "Cool wood",
+        "precio": 13000,
+        "stock": 1
+      },
+      {
+        "id": 23,
+        "tono": "Nude dark",
+        "precio": 13000,
+        "stock": 1
+      },
+      {
+        "id": 24,
+        "tono": "Dark Sand",
+        "precio": 13000,
+        "stock": 1
+      },
+      {
+        "id": 25,
+        "tono": "Goji Berry",
+        "precio": 13000,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "nombre": "Fijador de maquillaje en Aerosol Mate Bloomshell grande",
+    "precio": 43000,
+    "stock": 2,
+    "categoria": "Rostro",
+    "descripcion": "Sella tu maquillaje durante horas manteniendo un acabado mate, fresco y libre de brillos indeseados.",
+    "imagenes": [
+      "img/producto_1785366344365_z1mh.JPG",
+      "img/producto_1785366344435_sd7v.JPG"
+    ]
+  },
+  {
+    "id": 27,
+    "nombre": "Fijador de maquillaje Profesional Naba",
+    "precio": 33000,
+    "stock": 2,
+    "categoria": "Rostro",
+    "descripcion": "Prolonga la duración de tu maquillaje con una bruma ligera que mantiene tu piel perfecta todo el día.",
+    "imagenes": [
+      "img/producto_1785366308340_67h5.JPG",
+      "img/producto_1785366308395_uovh.JPG"
+    ]
+  },
+  {
+    "id": 28,
+    "nombre": "Polvo Traslucido facial 4 en 1 Majikal",
+    "precio": 50000,
+    "stock": 2,
+    "categoria": "Rostro",
+    "descripcion": "Sella, matifica y perfecciona el tono de tu rostro logrando un efecto filtro de porcelana irreal.",
+    "imagenes": [
+      "img/producto_1785366286660_v5gd.JPG",
+      "img/producto_1785366286712_4o5i.JPG",
+      "img/producto_1785366286746_p8y9.JPG"
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "Pestañina Prosa ",
+    "categoria": "Ojos",
+    "descripcion": "Consigue pestañas visiblemente más largas, definidas y con un volumen espectacular todo el día.",
+    "imagenes": [
+      "img/producto_1785366022928_2nwk.JPG",
+      "img/producto_1785366022973_rw2t.JPG",
+      "img/producto_1785366023012_0jx1.JPG"
+    ],
+    "variantes": [
+      {
+        "id": 1785366107692,
+        "tono": "Maxi volumen silicon",
+        "precio": 23000,
+        "stock": 1
+      },
+      {
+        "id": 1785366107567,
+        "tono": "Largo definición",
+        "precio": 23000,
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "nombre": "Parches de hidrogel con colágeno para contorno de ojos",
+    "precio": 1500,
+    "stock": 4,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Un shot de colágeno para refrescar, descongestionar e iluminar tu mirada al instante.",
+    "imagenes": [
+      "img/producto_1785365974866_qfw6.JPG",
+      "img/producto_1785365974940_5fhk.JPG"
+    ]
+  },
+  {
+    "id": 32,
+    "nombre": "Parche de hidrogel con colágeno para labios resecos y agrietados",
+    "precio": 1500,
+    "stock": 4,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Rescata y restaura la suavidad de tus labios dejándolos hidratados, tersos y restaurados.",
+    "imagenes": [
+      "img/producto_1785365904530_7s2j.JPG",
+      "img/producto_1785365904599_pz2h.JPG"
+    ]
+  },
+  {
+    "id": 33,
+    "nombre": "Aceite hidratante para labios Lula",
+    "precio": 18000,
+    "stock": 5,
+    "categoria": "Labios",
+    "descripcion": "Nutrición intensa con un toque de brillo radiante y sin sensación pegajosa.",
+    "imagenes": [
+      "img/producto_1785365876089_59cn.JPG",
+      "img/producto_1785365876144_8eck.JPG",
+      "img/producto_1785365876197_wc1v.JPG"
+    ]
+  },
+  {
+    "id": 34,
+    "nombre": "Labial girly girllabkit",
+    "precio": 20000,
+    "stock": 5,
+    "categoria": "Labios",
+    "descripcion": "El toque chic y femenino perfecto para destacar tus labios con tonos encantadores.",
+    "imagenes": [
+      "img/producto_1785365723339_rvd5.JPG",
+      "img/producto_1785365723392_k9o8.JPG",
+      "img/producto_1785365723444_1nki.JPG"
+    ]
+  },
+  {
+    "id": 35,
+    "nombre": "Tinta para labios y mejillas Lula",
+    "precio": 15000,
+    "stock": 3,
+    "categoria": "Labios",
+    "descripcion": "Un rubor natural y duradero en tus mejillas y labios con una sola gota de frescura.",
+    "imagenes": [
+      "img/producto_1785365657695_sfji.JPG",
+      "img/producto_1785365657748_zhog.JPG",
+      "img/producto_1785365657788_jxsm.JPG"
+    ]
+  },
+  {
+    "id": 36,
+    "nombre": "Delineador Plumón Atenea Profesional",
+    "precio": 20000,
+    "stock": 2,
+    "categoria": "Ojos",
+    "descripcion": "Trazos negros ultra intensos y de alta precisión para una mirada firme y cautivadora.",
+    "imagenes": [
+      "img/producto_1785365633474_ouid.JPG",
+      "img/producto_1785365633531_m9v3.JPG"
+    ]
+  },
+  {
+    "id": 37,
+    "nombre": "Espuma limpiadora Acido Salicícilo Bioaqua",
+    "precio": 14000,
+    "stock": 1,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Limpia tus poros a fondo, reduce el exceso de grasa y combate las imperfecciones de tu piel.",
+    "imagenes": [
+      "img/producto_1785365613686_0ahw.JPG",
+      "img/producto_1785365613758_p8yt.JPG"
+    ]
+  },
+  {
+    "id": 38,
+    "nombre": "Mascarillas en velo Antiedad Bioaqua",
+    "precio": 2500,
+    "stock": 12,
+    "categoria": "Cuidado Facial",
+    "descripcion": "Tratamiento intensivo para recargar tu piel de vitalidad, luminosidad y firmeza al instante.",
+    "imagenes": [
+      "img/producto_1785365541151_5foo.JPG",
+      "img/producto_1785365541215_vg02.JPG",
+      "img/producto_1785365541278_ux0h.JPG"
+    ]
+  },
+  {
+    "id": 39,
+    "nombre": "Limpiador desinfectante de Brochas Montoc",
+    "precio": 20000,
+    "stock": 2,
+    "categoria": "Accesorios",
+    "descripcion": "Limpia y desinfecta tus brochas al instante manteniéndolas suaves, higiénicas y como nuevas.",
+    "imagenes": [
+      "img/producto_1785365482754_z4ay.JPG",
+      "img/producto_1785365482812_qcyc.JPG",
+      "img/producto_1785365482857_dud4.JPG"
+    ]
+  },
+  {
+    "id": 40,
+    "nombre": "Brillo labial en barra Atenea - spotlight",
+    "precio": 43000,
+    "stock": 1,
+    "categoria": "Labios",
+    "descripcion": "El equilibrio ideal entre la nutrición de un bálsamo y el brillo deslumbrante de un gloss.",
+    "imagenes": [
+      "img/producto_1785365465551_hwg3.JPG",
+      "img/producto_1785365465604_6cip.JPG",
+      "img/producto_1785365465654_m2v6.JPG"
+    ]
+  },
+  {
+    "id": 42,
+    "nombre": "Lip gloss jumbo con aplicador grueso glitter",
+    "precio": 6000,
+    "stock": 1,
+    "categoria": "Labios",
+    "descripcion": "Brillo extremo y destellos deslumbrantes en una sola pasada gracias a su aplicador XXL.",
+    "imagenes": [
+      "img/producto_1785365420845_dohk.JPG",
+      "img/producto_1785365420903_lieb.JPG"
+    ]
+  }
+]

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lilihum - Admin</title>
+  <link rel="icon" type="image/png" href="../img/logo.png">
+  <style>
+    :root {
+      --primary: #9D3052;
+      --bg: #F7EEE0;
+      --accent: #6C0028;
+      --secondary: #BF6676;
+      --white: #FFFFFF;
+      --text: #2C2C2C;
+      --text-light: #6B6B6B;
+      --radius: 12px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+    img { max-width: 100%; display: block; }
+
+    .header {
+      background: var(--accent);
+      color: var(--white);
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header h1 { font-size: 1.3rem; }
+
+    .admin-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px 0; }
+    @media (max-width: 768px) { .admin-layout { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--bg);
+    }
+
+    .form-group { margin-bottom: 14px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: border var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .form-group textarea { resize: vertical; min-height: 60px; }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-accent { background: var(--accent); color: var(--white); }
+    .btn-accent:hover { background: var(--primary); }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-secondary { background: var(--secondary); color: var(--white); }
+    .btn-secondary:hover { opacity: 0.9; }
+    .btn-danger { background: #e74c3c; color: var(--white); }
+    .btn-danger:hover { background: #c0392b; }
+    .btn-success { background: #27ae60; color: var(--white); }
+    .btn-success:hover { background: #219a52; }
+    .btn-sm { padding: 6px 14px; font-size: 0.8rem; }
+    .btn-block { width: 100%; justify-content: center; }
+
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+    th { color: var(--primary); font-weight: 600; }
+    .actions-cell { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .badge { padding: 2px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+    .badge-ok { background: #d4edda; color: #155724; }
+    .badge-warn { background: #f8d7da; color: #721c24; }
+
+    .toast {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      color: var(--white);
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast-success { background: #27ae60; }
+    .toast-error { background: #e74c3c; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    .venta-item { padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+    .venta-item:last-child { border: none; }
+    .venta-meta { font-size: 0.8rem; color: var(--text-light); margin-top: 4px; }
+
+    .actions-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+
+    .imagenes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+      min-height: 40px;
+    }
+    .imagenes-grid .img-thumb {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #e0d6c8;
+    }
+    .imagenes-grid .img-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .imagenes-grid .img-thumb .btn-remove-img {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: rgba(231,76,60,0.9);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .imagenes-grid .img-thumb .btn-remove-img:hover {
+      background: #c0392b;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .checkbox-label input { width: auto; }
+    .variante-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+      background: var(--bg);
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+    .variante-row input {
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .variante-row .v-tono { flex: 2; min-width: 0; }
+    .variante-row .v-precio { flex: 1; min-width: 0; }
+    .variante-row .v-stock { flex: 0 0 70px; }
+    .variante-row .btn-remove-variante {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .variante-row .btn-remove-variante:hover { background: #c0392b; }
+    .variantes-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .variantes-header label { margin: 0; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1>⚙️ Panel Lilihum</h1>
+      <div>
+        <a href="../" class="btn btn-secondary btn-sm" target="_blank">Ver Tienda</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="admin-layout">
+      <div>
+        <!-- Inventario -->
+        <div class="card">
+          <h2>📦 Inventario</h2>
+          <div class="actions-bar">
+            <button class="btn btn-primary btn-sm" id="btnNuevoProducto">+ Nuevo Producto</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="productosTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Formulario Producto -->
+        <div class="card" id="formProductoCard">
+          <h2 id="formProductoTitle">✏️ Nuevo Producto</h2>
+          <form id="productoForm">
+            <input type="hidden" id="productoId">
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" id="prodNombre" required>
+            </div>
+
+            <div class="form-group" id="variantesToggle">
+              <label class="checkbox-label">
+                <input type="checkbox" id="prodTieneVariantes">
+                ¿Tiene variantes? (tonos, tallas, etc.)
+              </label>
+            </div>
+
+            <div id="simpleFields">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Precio ($)</label>
+                  <input type="number" id="prodPrecio" min="0">
+                </div>
+                <div class="form-group">
+                  <label>Stock</label>
+                  <input type="number" id="prodStock" min="0" value="0">
+                </div>
+              </div>
+            </div>
+
+            <div id="variantesEditor" style="display:none;">
+              <div class="variantes-header">
+                <label>Variantes</label>
+                <button type="button" class="btn btn-secondary btn-sm" id="btnAddVariante">+ Agregar variante</button>
+              </div>
+              <div id="variantesList"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Categoría</label>
+                <select id="prodCategoria">
+                  <option value="">Seleccionar...</option>
+                  <option value="Rostro">Rostro</option>
+                  <option value="Ojos">Ojos</option>
+                  <option value="Labios">Labios</option>
+                  <option value="Cuidado Facial">Cuidado Facial</option>
+                  <option value="Accesorios">Accesorios</option>
+                </select>
+              </div>
+              <div class="form-group" id="imagenesGroup">
+                <label>Imágenes</label>
+                <div class="imagenes-grid" id="imagenesPreview"></div>
+                <div class="imagenes-actions">
+                  <button type="button" class="btn btn-secondary btn-sm" id="btnAddImagenes">+ Agregar imágenes</button>
+                  <input type="file" id="prodImagenes" multiple accept="image/*" style="display:none">
+                </div>
+                <input type="hidden" id="prodImagenesUrl" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Descripción</label>
+              <textarea id="prodDescripcion"></textarea>
+            </div>
+            <div class="actions-bar">
+              <button type="submit" class="btn btn-accent" id="btnGuardarProducto">💾 Guardar</button>
+              <button type="button" class="btn btn-secondary" id="btnCancelarProducto">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <!-- POS Ventas -->
+        <div class="card">
+          <h2>🧾 Registrar Venta</h2>
+          <div class="form-group">
+            <label>Producto</label>
+            <select id="ventaProducto"></select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Cantidad</label>
+              <input type="number" id="ventaCantidad" min="1" value="1">
+            </div>
+            <div class="form-group">
+              <label>Método</label>
+              <select id="ventaMetodo">
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+                <option value="Tarjeta">Tarjeta</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Cliente (opcional)</label>
+            <input type="text" id="ventaCliente" placeholder="Nombre del cliente">
+          </div>
+          <button class="btn btn-success btn-block" id="btnRegistrarVenta">✅ Registrar Venta</button>
+        </div>
+
+        <!-- Historial Ventas -->
+        <div class="card">
+          <h2>📊 Historial de Ventas</h2>
+          <div id="ventasList">
+            <p style="color: var(--text-light);">Cargando ventas...</p>
+          </div>
+        </div>
+
+        <!-- Publicar -->
+        <div class="card">
+          <h2>🚀 Publicar Cambios</h2>
+          <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 12px;">
+            Ejecuta git add, commit y push para desplegar en GitHub Pages.
+          </p>
+          <button class="btn btn-primary btn-block" id="btnPublicar">🚀 Publicar en GitHub Pages</button>
+          <pre id="publishOutput" style="margin-top:12px; background:#f5f5f5; padding:12px; border-radius:8px; font-size:0.8rem; max-height:150px; overflow:auto; display:none;"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

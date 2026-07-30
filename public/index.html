@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lilihum</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="img/logo.png" alt="Lilihum" class="logo">
+      </a>
+      <button class="cart-toggle" id="cartToggle" aria-label="Abrir carrito">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <a href="/" class="nombre-cont">
+        <img src="img/Nombre.png" alt="LilihumNombre" class="nombre">
+      </a>
+      <p>Descubre nuestra colección</p>
+    </section>
+
+    <section class="toolbar">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar producto..." autocomplete="off">
+      <select id="sortSelect" class="sort-select">
+        <option value="nombre-asc">Nombre: A - Z</option>
+        <option value="nombre-desc">Nombre: Z - A</option>
+        <option value="precio-asc">Precio: Menor a Mayor</option>
+        <option value="precio-desc">Precio: Mayor a Menor</option>
+      </select>
+    </section>
+
+    <section class="products" id="productsGrid">
+      <div class="loader">Cargando productos...</div>
+    </section>
+
+    <section class="pagination" id="pagination"></section>
+  </main>
+
+  <aside class="cart-overlay" id="cartOverlay">
+    <div class="cart-panel" id="cartPanel">
+      <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <button class="cart-close" id="cartClose">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">El carrito está vacío</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0</span>
+        </div>
+        <button class="btn btn-primary btn-whatsapp" id="whatsappBtn">
+          Finalizar pedido
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="modal-overlay" id="productModal">
+    <div class="modal-panel" id="modalBody"></div>
+  </aside>
+
+  <a href="https://wa.me/573229087527?text=%C2%A1Hola%20Lilihum!%20Quisiera%20consultar%20sobre%20un%20producto." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 32 32" fill="white" width="28" height="28"><path d="M16 0C7.2 0 0 7.2 0 16c0 2.8 0.8 5.6 2.4 8l-1.6 6 6.4-1.6C9.6 29.6 12.8 32 16 32c8.8 0 16-7.2 16-16S24.8 0 16 0zM24 22.4c-0.4 1.2-2 2-3.2 2.2-0.8 0-2 0.4-6.8-2.4C8.8 19.2 6.8 15.2 6.8 14c0-0.8 0.8-2 1.6-2.4 0.4-0.4 0.8-0.4 1.2-0.4h0.8c0.4 0 0.8 0 1.2 0.8 0.4 0.8 1.2 2.8 1.2 2.8s0.4 0.8 0 1.2c-0.4 0.4-0.8 0.8-1.2 1.2-0.4 0.4-0.8 0.8-0.4 1.6 0.4 0.8 2 3.2 4.4 4.4 2.4 1.2 2.4 0.8 3.2 0.8 0.8 0 2-1.2 2.4-2 0.4-0.8 0.8-0.8 1.2-0.8h0.8c0.4 0 0.8 0 1.2 0.4 0.8 0.4 2 1.2 2.4 1.6 0.4 0.4 0.4 0.8 0.4 1.2z"/></svg>
+  </a>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Lilihum. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
