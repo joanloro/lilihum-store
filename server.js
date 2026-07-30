@@ -274,18 +274,39 @@ app.post('/api/git-publish', (req, res) => {
     }
     fs.cpSync(publicDir, docsDir, { recursive: true });
 
-    const commands = [
-      'git add .',
-      'git commit -m "update"',
-      'git push origin main'
-    ];
-    const fullCmd = commands.join(' && ');
-    exec(fullCmd, { cwd: __dirname }, (err, stdout, stderr) => {
-      if (err) return res.status(500).json({ error: stderr || err.message });
-      res.json({ success: true, output: stdout });
+    const runCmd = (cmd, cb) => {
+      exec(cmd, { cwd: __dirname, maxBuffer: 1024 * 1024 }, cb);
+    };
+
+    runCmd('git status --porcelain', (err, stdout, stderr) => {
+      if (err) return res.status(500).json({ error: 'Error en git status: ' + (stderr || err.message) });
+
+      const pushOnly = stdout.trim() === '';
+      const steps = pushOnly
+        ? ['git push origin main']
+        : ['git add .', 'git commit -m "update"', 'git push origin main'];
+
+      const fullCmd = steps.join(' && ');
+      runCmd(fullCmd, (err2, stdout2, stderr2) => {
+        if (err2) {
+          const msg = stderr2 || err2.message;
+          if (msg.includes('no such remote') || msg.includes('remote origin')) {
+            return res.status(500).json({
+              error: 'No hay remote configurado. Ejecuta:\ngit remote add origin https://github.com/joanloro/lilihum-store.git\ngit push -u origin main'
+            });
+          }
+          if (msg.includes('no upstream')) {
+            return res.status(500).json({
+              error: 'Primer push pendiente. Ejecuta:\ngit push -u origin main'
+            });
+          }
+          return res.status(500).json({ error: msg });
+        }
+        res.json({ success: true, output: stdout2 || 'Push completado' + (pushOnly ? ' (sin cambios nuevos)' : '') });
+      });
     });
   } catch (e) {
-    res.status(500).json({ error: 'Error al copiar archivos: ' + e.message });
+    res.status(500).json({ error: 'Error al copiar archivos a docs/: ' + e.message });
   }
 });
 
