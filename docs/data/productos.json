@@ -374,8 +374,6 @@
   {
     "id": 34,
     "nombre": "Labial girly girllabkit",
-    "precio": 20000,
-    "stock": 5,
     "categoria": "Labios",
     "descripcion": "El toque chic y femenino perfecto para destacar tus labios con tonos encantadores.",
     "imagenes": [
@@ -383,6 +381,38 @@
       "img/producto_1785365723392_k9o8.JPG",
       "img/producto_1785365723444_1nki.JPG",
       "img/producto_1785373307414_t3n3.jpg"
+    ],
+    "variantes": [
+      {
+        "id": 1785373748685,
+        "tono": "NÁPOLES",
+        "precio": 20000,
+        "stock": 1
+      },
+      {
+        "id": 1785373749117,
+        "tono": "MILÁN",
+        "precio": 20000,
+        "stock": 1
+      },
+      {
+        "id": 1785373749240,
+        "tono": "VERONA",
+        "precio": 20000,
+        "stock": 1
+      },
+      {
+        "id": 1785373748743,
+        "tono": "FLORENCIA",
+        "precio": 20000,
+        "stock": 1
+      },
+      {
+        "id": 1785373749465,
+        "tono": "ROMA",
+        "precio": 20000,
+        "stock": 1
+      }
     ]
   },
   {
